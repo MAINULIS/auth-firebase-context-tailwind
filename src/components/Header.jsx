@@ -5,14 +5,14 @@ import { AuthContext } from '../provider/AuthProviders';
 
 const Header = () => {
 
-    const { user,logOut } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
-    const handleLogOut = () =>{
+    const handleLogOut = () => {
         logOut()
-        .then( ()=>{
+            .then(() => {
 
-        })
-        .catch(error => console.error(error))
+            })
+            .catch(error => console.error(error))
     }
     return (
         <div>
@@ -23,20 +23,26 @@ const Header = () => {
                         <NavLink className="btn btn-ghost normal-case text-xl" to="/">Home</NavLink>
                     </li>
                     <li>
+                        <NavLink className="btn btn-ghost normal-case text-xl" to="/orders">Orders</NavLink>
+                    </li>
+                    {user && <li>
+                        <NavLink className="btn btn-ghost normal-case text-xl" to="/profile">Profile</NavLink>
+                    </li>}
+                    <li>
                         <NavLink className="btn btn-ghost normal-case text-xl" to="/login">Login</NavLink>
                     </li>
                     <li>
                         <NavLink className="btn btn-ghost normal-case text-xl" to="/register">Register</NavLink>
                     </li>
                     {
-                    user ? <><span>{user.email}</span>
-                        <button onClick={handleLogOut} className="btn btn-xs">LogOut</button>
+                        user ? <><span>{user.email}</span>
+                            <button onClick={handleLogOut} className="btn btn-xs">LogOut</button>
 
-                    </> : 
-                    <Link to="/login">Login</Link>
-                }
+                        </> :
+                            <Link to="/login">Login</Link>
+                    }
                 </ul>
-                
+
             </div>
         </div>
     );

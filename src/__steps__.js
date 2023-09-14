@@ -13,3 +13,10 @@
 1. break down the create user function
 2. auth provider will have auth and pass email and password from register component
  */
+
+/* Private Route
+1. create private route 
+2. get {user, loading} from AuthProvider
+3. write conditions in private route
+4. place the router into private router as element in main.jsx
+ */
