@@ -1,4 +1,5 @@
 /*  CONTEXT API
+benefit of Context API:using context api we can use any shared data at any component of the project.
   1. Create context and export
   2. Create a provider and pass value
   3. use useContext to receive the value
